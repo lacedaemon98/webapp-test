@@ -6,4 +6,4 @@ script:
   - echo "Build Start"
   - npm install
   - echo "Running test"
-  - mocha --require babel-register tests/*.js --exit
+  - mocha --require babel-register tests/*.js --exit --timeout 10000

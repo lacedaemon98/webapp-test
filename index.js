@@ -28,14 +28,14 @@ else
 var port = process.env.PORT || 5000;
 
 // Send message for default URL
-app.get('/', (req, res) => res.send('Hello World with Express'));
+app.get('/', (req, res) => res.send('Hello World'));
 
 
 // Use Api routes in the App
 app.use('/api', apiRoutes);
 // Launch app to listen to specified port
 var server = app.listen(port, function () {
-    console.log("Running RestHub on port " + port);
+    console.log("Running Pokedex on port " + port);
 });
 
 module.exports = server;
