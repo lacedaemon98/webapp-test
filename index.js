@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
 mongoose.connect('mongodb://localhost/pokedex', { useNewUrlParser: true});
 var db = mongoose.connection;
+console.log(db);
 
 // Added check for DB connection
 if(!db)
