@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - "12.18.4"
+
+script:
+  - echo "Build Start"
+  - npm install
+  - echo "Running test"
+  - mocha --require babel-register tests/*.js --exit
