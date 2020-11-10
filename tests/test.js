@@ -20,7 +20,7 @@ describe("Pokemons", () => {
          });
         // Test to get single pokemon record
         it("should get a single pokemon record", (done) => {
-             const id = '5faaa5d2fefb5677ec1f7609';
+             const id = '5faabb49ace73970946a38cd';
              chai.request(app)
                  .get(`/api/pokemons/${id}`)
                  .end((err, res) => {
