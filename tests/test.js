@@ -2,6 +2,7 @@
 let chai = require('chai');
 let chaiHttp = require('chai-http');
 let app = require('../index');
+var createdID;
 
 chai.use(chaiHttp);
 chai.should();
@@ -45,11 +46,22 @@ describe("Pokemons", () => {
                   .end(function(err, res) {
                     res.should.have.status(200);
                     res.body.should.be.a('object');
+                    createdID = res.body.data._id;
                     done();
                   });
          });
+    });
 
-
-
+    describe("DELETE /", () => {
+        // Test to remove a pokemon record
+        it("should remove a pokemon record", (done) => {
+             chai.request(app)
+                .del(`/api/pokemons/${createdID}`)
+                .end((err, res) => {
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    done();
+                 });
+         });
     });
 });
