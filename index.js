@@ -1,5 +1,8 @@
 // Import express
 let express = require('express');
+
+const serverless = require('serverless-http');
+
 // Import Body parser
 let bodyParser = require('body-parser');
 // Import Mongoose
@@ -39,3 +42,4 @@ var server = app.listen(port, function () {
 });
 
 module.exports = server;
+module.exports.handler = serverless(app);
