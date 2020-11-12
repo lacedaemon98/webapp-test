@@ -14,6 +14,7 @@ exports.index = function (req, res) {
             message: "Pokemons retrieved successfully",
             data: pokemons
         });
+
     });
 };
 // Handle create pokemon actions
@@ -49,7 +50,7 @@ exports.update = function (req, res) {
 Pokemon.findById(req.params.pokemon_id, function (err, pokemon) {
         if (err){
             res.send(err);
-            
+
           }
 pokemon.name = req.body.name ? req.body.name : pokemon.name;
 pokemon.type = req.body.type;

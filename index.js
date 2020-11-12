@@ -9,6 +9,9 @@ let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
 // Initialise the app
 let app = express();
+var cors = require('cors')
+
+app.use(cors()) // Use this after the variable declaration
 
 // Import routes
 let apiRoutes = require("./api-routes");
