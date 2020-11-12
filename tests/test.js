@@ -52,6 +52,24 @@ describe("Pokemons", () => {
          });
     });
 
+    describe("PUT /", () => {
+        // Test to add a pokemon record
+        it("should edit a pokemon record", (done) => {
+             chai.request(app)
+                 .put(`/api/pokemons/${createdID}`)
+                 .set('content-type', 'application/x-www-form-urlencoded')
+                  .send({name: 'Charizard'})
+                  .send({type: 'Fire'})
+                  .send({status: 'Normal'})
+                  .end(function(err, res) {
+                    res.should.have.status(200);
+                    res.body.should.be.a('object');
+                    createdID = res.body.data._id;
+                    done();
+                  });
+         });
+    });
+
     describe("DELETE /", () => {
         // Test to remove a pokemon record
         it("should remove a pokemon record", (done) => {
