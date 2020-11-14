@@ -21,7 +21,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb+srv://lacedaemon98:bop@1998@cluster0.kqkhx.mongodb.net/pokedex?retryWrites=true&w=majority', { useNewUrlParser: true});
+mongoose.connect('mongodb+srv://lacedaemon98:bop@1998@cluster0.kqkhx.mongodb.net/pokedex?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true});
+
 var db = mongoose.connection;
 
 // Added check for DB connection
